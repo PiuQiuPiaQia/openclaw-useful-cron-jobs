@@ -12,6 +12,14 @@ import re
 import json
 import time
 from datetime import datetime
+from pathlib import Path
+
+# 添加项目 lib 目录到 Python 路径
+lib_path = Path(__file__).parent.parent.parent / 'lib'
+sys.path.insert(0, str(lib_path))
+
+# 导入钉钉推送工具
+from dingtalk import send_to_dingtalk
 
 try:
     from selenium import webdriver
@@ -115,11 +123,45 @@ def fetch_gold_price():
     else:
         return None
 
+def format_message(gold_data):
+    """格式化金价消息"""
+    price = gold_data.get('price', 'N/A')
+    unit = gold_data.get('unit', '元/克')
+    source = gold_data.get('source', '未知')
+    timestamp = gold_data.get('timestamp', datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+
+    # 简化数据来源显示
+    if '京东金融' in source:
+        source_display = '京东金融'
+    else:
+        source_display = source
+
+    message = f"""📈 实时黄金价格播报
+
+━━━━━━━━━━━━━━━
+💰 当前金价：{price} {unit}
+🕐 更新时间：{timestamp}
+📍 数据来源：{source_display}
+━━━━━━━━━━━━━━━"""
+
+    return message
+
 if __name__ == '__main__':
     result = fetch_gold_price()
 
     if result:
-        print(json.dumps(result, ensure_ascii=False, indent=2))
+        # 格式化消息
+        message = format_message(result)
+
+        # 推送到钉钉
+        success = send_to_dingtalk(message)
+
+        if success:
+            print(f"✅ 金价已推送到钉钉: {result['price']} {result['unit']}", file=sys.stderr)
+            sys.exit(0)
+        else:
+            print(f"❌ 推送失败", file=sys.stderr)
+            sys.exit(1)
     else:
         # Selenium 失败，返回错误信息
         print(json.dumps({
