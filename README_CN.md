@@ -5,7 +5,7 @@ OpenClaw AI 助手的实用定时任务。
 ## 🚀 快速开始
 
 ```bash
-cd /home/openclaw-useful-cron-jobs
+cd openclaw-useful-cron-jobs
 bash setup.sh
 ```
 

@@ -5,7 +5,7 @@ Useful cron jobs for OpenClaw AI assistant.
 ## 🚀 Quick Start
 
 ```bash
-cd /home/openclaw-useful-cron-jobs
+cd openclaw-useful-cron-jobs
 bash setup.sh
 ```
 
