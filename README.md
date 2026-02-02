@@ -14,7 +14,6 @@ bash setup.sh
 | Project | Description | Location |
 |---------|-------------|----------|
 | **Gold Price Alert** | Real-time gold price monitoring and push notifications via DingTalk | `/gold-price-alert/` |
-| **Library** | Shared utilities for DingTalk webhook and configuration management | `/lib/` |
 
 ### Gold Price Alert
 
@@ -36,33 +35,9 @@ crontab -e
 */5 * * * * /home/openclaw-useful-cron-jobs/gold-price-alert/scripts/push_gold_price.sh
 ```
 
-### Library
-
-Shared utilities for all cron jobs.
-
-**Features:**
-- DingTalk webhook push (with signature verification)
-- Auto-load config from `.env`
-- Support text and Markdown format
-
-**Quick Start:**
-```python
-from lib.dingtalk import send
-
-send("Hello, DingTalk!")
-```
-
-See [lib/README.md](lib/README.md) for details.
-
 ## 🔧 Configuration
 
 All sensitive configurations are stored in `.env` file at project root.
-
-### Quick Configure
-
-```bash
-bash /home/openclaw-useful-cron-jobs/configure.sh
-```
 
 Or manually edit `/home/openclaw-useful-cron-jobs/.env`:
 
@@ -93,14 +68,9 @@ DINGTALK_SIGN_SECRET=SECYOUR_SECRET
 openclaw-useful-cron-jobs/
 ├── README.md                    # This file
 ├── README_CN.md                 # Chinese documentation
-├── configure.sh                 # Configuration wizard
 ├── .env                         # Sensitive configs (not committed)
 ├── .env.example                 # Config template
 ├── .gitignore                   # Git ignore
-├── lib/                         # Shared library
-│   ├── README.md                # Library documentation
-│   ├── __init__.py
-│   └── dingtalk.py              # DingTalk webhook tool
 └── gold-price-alert/            # Gold price monitoring
     ├── README.md
     ├── requirements.txt

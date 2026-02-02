@@ -14,7 +14,6 @@ bash setup.sh
 | 项目 | 描述 | 位置 |
 |------|------|------|
 | **黄金价格提醒** | 实时黄金价格监控和钉钉推送通知 | `/gold-price-alert/` |
-| **公共工具库** | 钉钉推送和配置管理的共享工具 | `/lib/` |
 
 ### 黄金价格提醒 (Gold Price Alert)
 
@@ -35,24 +34,6 @@ bash /home/openclaw-useful-cron-jobs/gold-price-alert/scripts/push_gold_price.sh
 crontab -e
 */5 * * * * /home/openclaw-useful-cron-jobs/gold-price-alert/scripts/push_gold_price.sh
 ```
-
-### 公共工具库 (Library)
-
-所有定时任务共享的工具库。
-
-**功能特性：**
-- 钉钉 Webhook 推送（加签验证）
-- 自动从 `.env` 加载配置
-- 支持文本和 Markdown 格式
-
-**快速使用：**
-```python
-from lib.dingtalk import send
-
-send("你好，钉钉！")
-```
-
-详细文档：[lib/README.md](lib/README.md)
 
 实时黄金价格监控和推送通知。
 
@@ -75,13 +56,7 @@ bash /home/openclaw-useful-cron-jobs/configure.sh
 
 所有敏感配置都存储在项目根目录的 `.env` 文件中。
 
-### 快速配置
-
-```bash
-bash /home/openclaw-useful-cron-jobs/configure.sh
-```
-
-或手动编辑 `/home/openclaw-useful-cron-jobs/.env`：
+手动编辑 `/home/openclaw-useful-cron-jobs/.env`：
 
 ```bash
 # 钉钉 Webhook 配置
@@ -110,14 +85,9 @@ DINGTALK_SIGN_SECRET=SECYOUR_SECRET
 openclaw-useful-cron-jobs/
 ├── README.md                    # 英文文档
 ├── README_CN.md                 # 本文件（中文）
-├── configure.sh                 # 配置向导
 ├── .env                         # 敏感配置（不提交）
 ├── .env.example                 # 配置模板
 ├── .gitignore                   # Git 忽略
-├── lib/                         # 公共工具库
-│   ├── README.md                # 工具库文档
-│   ├── __init__.py
-│   └── dingtalk.py              # 钉钉推送工具
 └── gold-price-alert/            # 黄金价格监控
     ├── README.md
     ├── requirements.txt
