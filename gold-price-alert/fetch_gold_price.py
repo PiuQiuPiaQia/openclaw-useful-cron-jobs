@@ -54,8 +54,8 @@ def fetch_gold_price_selenium():
         chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
 
         # 使用 webdriver-manager 自动管理 ChromeDriver
-        chromedriver_path = ChromeDriverManager().install()
-        driver = webdriver.Chrome(executable_path=chromedriver_path, options=chrome_options)
+        service = Service(ChromeDriverManager().install())
+        driver = webdriver.Chrome(service=service, options=chrome_options)
 
         print("浏览器启动成功，正在访问京东金融...", file=sys.stderr)
 
