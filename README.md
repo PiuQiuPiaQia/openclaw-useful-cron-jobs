@@ -1,6 +1,6 @@
 # OpenClaw Useful Cron Jobs
 
-A collection of useful cron jobs for OpenClaw AI assistant.
+Useful cron jobs for OpenClaw AI assistant.
 
 ## 🚀 Quick Start
 
@@ -52,16 +52,6 @@ DINGTALK_SIGN_SECRET=SECYOUR_SECRET
 > 2. Security Settings: Select "Signature"
 > 3. Copy Webhook URL and Signature Secret
 
-## 📚 Documentation
-
-- [gold-price-alert/README.md](gold-price-alert/README.md) - Gold price alert documentation
-
-## 🔒 Security
-
-- ✅ Sensitive info stored in `.env` (not in code)
-- ✅ `.env` is in `.gitignore`
-- ✅ Never share your `.env` file
-
 ## 📝 Project Structure
 
 ```
@@ -81,19 +71,6 @@ openclaw-useful-cron-jobs/
         └── push_gold_price.sh
 ```
 
-## 🚀 Adding New Jobs
-
-To add a new cron job:
-
-1. Create a new directory for your job
-2. Add your scripts and documentation
-3. Update this README
-4. Add configuration to `.env` if needed
-
 ## 📄 License
 
 MIT License
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.

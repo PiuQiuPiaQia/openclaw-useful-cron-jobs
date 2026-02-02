@@ -1,6 +1,6 @@
 # OpenClaw 实用定时任务
 
-OpenClaw AI 助手的实用定时任务集合。
+OpenClaw AI 助手的实用定时任务。
 
 ## 🚀 快速开始
 
@@ -35,23 +35,6 @@ crontab -e
 */5 * * * * /home/openclaw-useful-cron-jobs/gold-price-alert/scripts/push_gold_price.sh
 ```
 
-实时黄金价格监控和推送通知。
-
-**功能特性：**
-- 从京东金融实时抓取黄金价格
-- 使用 Selenium + Chrome 无头浏览器
-- 钉钉 Webhook 推送（加签验证）
-- 简洁的消息模板
-
-**位置：** `/gold-price-alert/`
-
-**快速开始：**
-```bash
-cd /home/openclaw-useful-cron-jobs/gold-price-alert
-bash setup.sh
-bash /home/openclaw-useful-cron-jobs/configure.sh
-```
-
 ## 🔧 配置说明
 
 所有敏感配置都存储在项目根目录的 `.env` 文件中。
@@ -68,16 +51,6 @@ DINGTALK_SIGN_SECRET=SECYOUR_SECRET
 > 1. 钉钉群 → 群设置 → 智能群助手 → 添加机器人 → 自定义
 > 2. 安全设置：选择"加签"
 > 3. 复制 Webhook URL 和加签密钥
-
-## 📚 文档
-
-- [gold-price-alert/README.md](gold-price-alert/README.md) - 黄金价格提醒文档
-
-## 🔒 安全说明
-
-- ✅ 敏感信息存储在 `.env` 中（不在代码中）
-- ✅ `.env` 已在 `.gitignore` 中
-- ✅ 不要分享 `.env` 文件
 
 ## 📝 项目结构
 
@@ -98,19 +71,6 @@ openclaw-useful-cron-jobs/
         └── push_gold_price.sh
 ```
 
-## 🚀 添加新任务
-
-添加新的定时任务：
-
-1. 为你的任务创建新目录
-2. 添加脚本和文档
-3. 更新本 README
-4. 如需配置，添加到 `.env`
-
 ## 📄 许可证
 
 MIT License
-
-## 🤝 贡献
-
-欢迎贡献！请随时提交 Pull Request。
