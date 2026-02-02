@@ -4,34 +4,9 @@ OpenClaw AI 助手的实用定时任务集合。
 
 ## 🚀 快速开始
 
-### 1. 安装与配置（交互式）
-
 ```bash
 cd /home/openclaw-useful-cron-jobs
 bash setup.sh
-```
-
-交互式安装向导会引导你完成：
-1. **选择项目** - 选择要安装的项目
-2. **配置钉钉** - 设置 Webhook URL 和密钥
-3. **安装依赖** - 自动安装所需依赖
-4. **测试推送** - 发送测试消息到钉钉
-
-### 2. 测试推送
-
-```bash
-bash /home/openclaw-useful-cron-jobs/gold-price-alert/scripts/push_gold_price.sh
-```
-
-### 3. 设置定时任务
-
-```bash
-crontab -e
-```
-
-添加：
-```bash
-*/5 * * * * /home/openclaw-useful-cron-jobs/gold-price-alert/scripts/push_gold_price.sh
 ```
 
 ## 📁 项目列表

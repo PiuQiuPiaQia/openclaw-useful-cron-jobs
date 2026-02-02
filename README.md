@@ -4,34 +4,9 @@ A collection of useful cron jobs for OpenClaw AI assistant.
 
 ## 🚀 Quick Start
 
-### 1. Install & Configure (Interactive)
-
 ```bash
 cd /home/openclaw-useful-cron-jobs
 bash setup.sh
-```
-
-The interactive installer will guide you through:
-1. **Select Projects** - Choose which projects to install
-2. **Configure DingTalk** - Set up Webhook URL and secret
-3. **Install** - Automatically install dependencies
-4. **Test** - Send a test message to DingTalk
-
-### 2. Test Push
-
-```bash
-bash /home/openclaw-useful-cron-jobs/gold-price-alert/scripts/push_gold_price.sh
-```
-
-### 3. Setup Cron Job
-
-```bash
-crontab -e
-```
-
-Add:
-```bash
-*/5 * * * * /home/openclaw-useful-cron-jobs/gold-price-alert/scripts/push_gold_price.sh
 ```
 
 ## 📁 Projects
