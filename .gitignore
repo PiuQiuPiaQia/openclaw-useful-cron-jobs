@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# 环境变量（敏感信息）
+.env
+.env.local
+.env.*.local
+
+# 虚拟环境
+venv/
+env/
+ENV/
+
+# 日志
+*.log
+
+# 数据库
+*.db
+*.sqlite
+*.sqlite3
+
+# 临时文件
+/tmp/
+*.tmp
+.DS_Store
+
+# Selenium
+*.png
+geckodriver.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
