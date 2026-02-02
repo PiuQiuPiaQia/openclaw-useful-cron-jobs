@@ -11,6 +11,11 @@ bash setup.sh
 
 ## 📁 Projects
 
+| Project | Description | Location |
+|---------|-------------|----------|
+| **Gold Price Alert** | Real-time gold price monitoring and push notifications via DingTalk | `/gold-price-alert/` |
+| **Library** | Shared utilities for DingTalk webhook and configuration management | `/lib/` |
+
 ### Gold Price Alert
 
 Real-time gold price monitoring and push notifications.
@@ -21,12 +26,10 @@ Real-time gold price monitoring and push notifications.
 - DingTalk Webhook push (with signature verification)
 - Clean message template
 
-**Location:** `/gold-price-alert/`
-
 **Usage:**
 ```bash
 # Manual trigger
-bash scripts/push_gold_price.sh
+bash /home/openclaw-useful-cron-jobs/gold-price-alert/scripts/push_gold_price.sh
 
 # Add to crontab
 crontab -e
@@ -36,8 +39,6 @@ crontab -e
 ### Library
 
 Shared utilities for all cron jobs.
-
-**Location:** `/lib/`
 
 **Features:**
 - DingTalk webhook push (with signature verification)
