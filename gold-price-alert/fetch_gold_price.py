@@ -15,7 +15,7 @@ from datetime import datetime
 from pathlib import Path
 
 # 添加项目 lib 目录到 Python 路径
-lib_path = Path(__file__).parent.parent.parent / 'lib'
+lib_path = Path(__file__).parent.parent / 'lib'
 sys.path.insert(0, str(lib_path))
 
 # 导入钉钉推送工具
